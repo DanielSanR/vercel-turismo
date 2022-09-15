@@ -1,0 +1,4747 @@
+{
+	"info": {
+		"_postman_id": "5d1d76c2-1e34-4ab9-8450-bd2bf2e778a8",
+		"name": "Turismo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"emprendimiento1@turismo.com\",\n    \"password\": \"secret123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						},
+						"description": "Retorna los datos de un usuario autenticado junto con el token."
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|klpXAJgC6kXAJmZdwwP06psO3WpWGclhQrH5o5na",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						},
+						"description": "Elimina la sesion del usuario."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Entrepreneurship",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|kldIgDNc4Dl94NFCs8gCviIzIHe9mFRooYafSQTg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/emprendimientos/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"emprendimientos",
+								"1"
+							]
+						},
+						"description": "Retorna una lista de emprendimientos."
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|b7t357ZUso91Q7mBDuZKB9CqyEFM7PuQSjTbZevs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/emprendimientos/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"emprendimientos",
+								"1"
+							]
+						},
+						"description": "Los datos de un solo emprendimiento y relaciones (Workdays, Employees, Users)."
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|b7t357ZUso91Q7mBDuZKB9CqyEFM7PuQSjTbZevs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Los helechos",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "loshelechos@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "calle 123",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "3764125896",
+									"type": "text"
+								},
+								{
+									"key": "locality",
+									"value": "Posadas",
+									"type": "text"
+								},
+								{
+									"key": "department",
+									"value": "Capital",
+									"type": "text"
+								},
+								{
+									"key": "coordinates",
+									"value": "[-27.0168,-54.52408]",
+									"type": "text"
+								},
+								{
+									"key": "accommodation",
+									"value": "yes",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/emprendimientos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"emprendimientos"
+							]
+						},
+						"description": "Crea un emprendimiento."
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|U8VLNj0GGpDuIxrdgz75jNdqWL4ZBJA8y47knsmc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Los helechos",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "loshelechos@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "calle 2222",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "3764125896",
+									"type": "text"
+								},
+								{
+									"key": "locality",
+									"value": "Posadas",
+									"type": "text"
+								},
+								{
+									"key": "department",
+									"value": "Capital",
+									"type": "text"
+								},
+								{
+									"key": "coordinates",
+									"value": "[-27.0168,-54.52408]",
+									"type": "text"
+								},
+								{
+									"key": "accommodation",
+									"value": "no",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/emprendimientos/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"emprendimientos",
+								"1"
+							]
+						},
+						"description": "Actualizar los datos de un emprendimiento."
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|9nuj1L97mizDec0d9DiBmUjcu6SbvRBm0oD6IxnE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Los helechos",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "loshelechos@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "calle 2589",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "3764125896",
+									"type": "text"
+								},
+								{
+									"key": "locality",
+									"value": "Posadas",
+									"type": "text"
+								},
+								{
+									"key": "department",
+									"value": "Capital",
+									"type": "text"
+								},
+								{
+									"key": "coordinates",
+									"value": "[-27.0168,-54.52408]",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/emprendimientos/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"emprendimientos",
+								"2"
+							]
+						},
+						"description": "Elimina un emprendimiento."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|qK4YasYovB0hIodGPpPQr9Zlm4ZIxyVreMi43MVf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "emprendimiento4",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "emprendimiento4@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "secret123",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "secret123",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						},
+						"description": "Crea un usuario. Para establecer el role del mismo se necesita enviar un agregar \"type\" : \"admin o client\""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|WgJMieOS67H6K8cpi9jehoED6laWY4QXci2AoAYZ",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "emprendimiento4",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "emprendimiento4@gmail.com.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "secret123",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "secret123",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/usuarios/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"usuarios",
+								"4"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Actualiza los datos de un usuario. Colocar en el encabezado \"_method\" .Para establecer el role del mismo se necesita enviar un agregar \"type\" : \"admin o client\". "
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|utfewKINosKbC2KspwK0qxtoM8NTlk8CrRy0vqpq",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/usuarios/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"usuarios",
+								"3"
+							]
+						},
+						"description": "Elimina un usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|l57VnHvoXzsI8wMrn53mgAVsUyTZiZbBpXoqh5Jq",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						},
+						"description": "Retorna una lista de usuarios del sistema y su emprendimiento (si los tiene)."
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|l57VnHvoXzsI8wMrn53mgAVsUyTZiZbBpXoqh5Jq",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"usuarios",
+								"1"
+							]
+						},
+						"description": "Trae los datos de un usuario y su emprendimiento asociado."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WorkDays",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|9nuj1L97mizDec0d9DiBmUjcu6SbvRBm0oD6IxnE",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/dias_laborales/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dias_laborales",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Retorna una lista de dias laborales de un emprendimiento especifico"
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Tf4L8sFJbO3RJMXJj5VQ1JrusOrjL4N9Xfm9VniD",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "day",
+									"value": "lunes",
+									"type": "text"
+								},
+								{
+									"key": "opening",
+									"value": "08:00:00",
+									"type": "text"
+								},
+								{
+									"key": "closing",
+									"value": "23:55:00",
+									"type": "text"
+								},
+								{
+									"key": "timeInterval",
+									"value": "60",
+									"type": "text"
+								},
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/dias_laborales",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dias_laborales"
+							]
+						},
+						"description": "Crea un dia laboral."
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|7qnnHaf2br44rkAgVuBx9T5Nmmnc0fV0pxcEp3fa",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/dias_laborales/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dias_laborales",
+								"1"
+							]
+						},
+						"description": "Elimina un dia laboral especificado por su id."
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Tf4L8sFJbO3RJMXJj5VQ1JrusOrjL4N9Xfm9VniD",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "day",
+									"value": "lunes",
+									"type": "text"
+								},
+								{
+									"key": "opening",
+									"value": "07:00:00",
+									"type": "text"
+								},
+								{
+									"key": "closing",
+									"value": "22:00:00",
+									"type": "text"
+								},
+								{
+									"key": "timeInterval",
+									"value": "120",
+									"type": "text"
+								},
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/dias_laborales/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dias_laborales",
+								"1"
+							]
+						},
+						"description": "Actualiza un dia laboral especificado por su id."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|4LRV9xUxXVrzMQwMqxM3HP2toWPr2W3PDE6psoC5",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/empleados/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empleados",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Retorna la lista de empleados de un emprendimiento especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|4LRV9xUxXVrzMQwMqxM3HP2toWPr2W3PDE6psoC5",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/empleados/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empleados",
+								"1"
+							]
+						},
+						"description": "Retorna los datos de un empleado."
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|4LRV9xUxXVrzMQwMqxM3HP2toWPr2W3PDE6psoC5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Nicolas",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Iriarte",
+									"type": "text"
+								},
+								{
+									"key": "dni",
+									"value": "34826346",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "nico@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "3764123456",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/empleados",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empleados"
+							]
+						},
+						"description": "Crea un empleado para un emprendimiento especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|4LRV9xUxXVrzMQwMqxM3HP2toWPr2W3PDE6psoC5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Nicolas",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Iriarte",
+									"type": "text"
+								},
+								{
+									"key": "dni",
+									"value": "34826346",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "nico@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "3764123456",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/nico/Escritorio/img test/1.png"
+								},
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/empleados/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empleados",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|4LRV9xUxXVrzMQwMqxM3HP2toWPr2W3PDE6psoC5",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/empleados/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empleados",
+								"6"
+							]
+						},
+						"description": "Elimina un usuario."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Installation",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|GBgznZPkHj9BY8wS2hTwVgp8Q351w1NOMQB19Vmq",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/instalaciones/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"instalaciones",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Retorna la lista de instalaciones de un emprendimiento especifico,  junto con la lista de sus categorias."
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|JaVIded5JMMRgcUzmb54bu3PP80TPULfohSRPylm",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/instalaciones/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"instalaciones",
+								"1"
+							]
+						},
+						"description": "Retorna una instalacion junto con sus servicios locales asignados."
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|A8mFNfWyW4aJWbCHJ1HJdsVIYXxhLpEyGxXIbAk4",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category\": \"Cabaña\",\n    \"name\": \"cabaña VIP\",\n    \"description\": \"3 habitaciones, 2 baños, cocina y living\",\n    \"capacity\": 7,\n    \"price\": 1500,\n    \"quantity\": 1,\n    \"entrepreneurship_id\": 1,\n    \"localServices\": [1,3]\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/instalaciones",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"instalaciones"
+							]
+						},
+						"description": "Crea una instalación y sus servicios locales relacionados. Los servicios pueden no enviarse al momento de crear la instalación."
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|GBgznZPkHj9BY8wS2hTwVgp8Q351w1NOMQB19Vmq",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Habitaciones",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "habitacion VIP",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "todo incluido",
+									"type": "text"
+								},
+								{
+									"key": "capacity",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1500",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "localServices[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "localServices[1]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/instalaciones/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"instalaciones",
+								"1"
+							]
+						},
+						"description": "Actualiza los datos de una instalacion de un emprendimiento especifico. Los servicios pueden o no enviarse para su actualizacion, si no es requerido lo recomendable es no enviar el array de ids.\n\nRetorna: La instalación y sus servicios locales."
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|aMJCNzqfGpjSZSpyqFM4GWIJVSFTvrsKT4ejrB3D",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/instalaciones/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"instalaciones",
+								"6"
+							]
+						},
+						"description": "Elimina una instalacion y sus relaciones con servicios locales.\n\nRetorna: La instalacion eliminada y con sus servicios locales."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LocalServices",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|cgmcKtMRFANNUkD9YDPaBk62WEqzTfsd58SvChgm",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/servicios_locales/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"servicios_locales",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Retorna la lista de servicios locales de un emprendimiento especifico, junto con la lista de sus categorias."
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|kNRHF1xTdXZjg1eoauQq04GocZlbK9FFXg0YtYwh",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Cancha de futbol",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Deporte",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"value": "deportes.png",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/servicios_locales/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"servicios_locales",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Crea un servicio local de un emprendimiento especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|NmnFeu2Qr7hhBF6ygzEsZWFNE5LwqLlJlxABtRVD",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "cancha de futbol",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Deporte",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"value": "deportes.png",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/servicios_locales/2/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"servicios_locales",
+								"2",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Actualiza los datos del servicio local del emprendimiento especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Y69e5z3g0ivoatzmZRfkzlTlnj7VuI250h5qyR7V",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/servicios_locales/2/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"servicios_locales",
+								"2",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Elimina un servicio local y sus relaciones con emprendimiento e instalaciones."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OptionalServices",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 2|kNRHF1xTdXZjg1eoauQq04GocZlbK9FFXg0YtYwh"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/servicios_opcionales/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"servicios_opcionales",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Retorna la lista de servicios opcionales de un emprendimiento especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|kNRHF1xTdXZjg1eoauQq04GocZlbK9FFXg0YtYwh",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Cabalgata",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Se realiza de 11 a 13 horas",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "155",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"value": "recreacion.png",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/servicios_opcionales/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"servicios_opcionales",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Crea un servicio opcional de un emprendimiento especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|kPx2crLiO9IqnWtyMJ3ZbIKiJ0YgdV9de4b2eeyL",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Salto encantado",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "El viaje sale a tal hora",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"value": "viajes.png",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/servicios_opcionales/4/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"servicios_opcionales",
+								"4",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Actualiza los datos del servicio opcional del emprendimiento especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|JonXIXX84Fq64t0jzXdkLYFvbA9NtvDG7OHmKKnZ",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/servicios_opcionales/2/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"servicios_opcionales",
+								"2",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Elimina un servicio opcional y sus relaciones con emprendimiento y detalles."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|A8mFNfWyW4aJWbCHJ1HJdsVIYXxhLpEyGxXIbAk4",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/clientes/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"clientes",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Retorna el listado de clientes de un emprendimiento especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|htOpGYmQ3MbzyPZZTM9BjYFtcnf39SKYcJgQgvcS",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/clientes/13/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"clientes",
+								"13",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Retorna los datos de un cliente especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|g2ma1iQXzpKzNC4VKwQwIS1R0VUJDkKLPHdOQz5r",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Nicolas",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Perez",
+									"type": "text"
+								},
+								{
+									"key": "dni",
+									"value": "35456789",
+									"type": "text"
+								},
+								{
+									"key": "date_birth",
+									"value": "12-07-1992",
+									"type": "text"
+								},
+								{
+									"key": "reason",
+									"value": "turismo",
+									"type": "text"
+								},
+								{
+									"key": "departureLocality",
+									"value": "Apostoles",
+									"type": "text"
+								},
+								{
+									"key": "residenceLocality",
+									"value": "Posadas",
+									"type": "text"
+								},
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/clientes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"clientes"
+							]
+						},
+						"description": "Registra a un cliente."
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|B1xe4MgWr5DB4iCgkOCePaGq8OtRDjqy2u44arVL",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "28",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Jorge",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Rodriguez",
+									"type": "text"
+								},
+								{
+									"key": "dni",
+									"value": "12.456.789",
+									"type": "text"
+								},
+								{
+									"key": "date_birth",
+									"value": "05-06-1992",
+									"type": "text"
+								},
+								{
+									"key": "reason",
+									"value": "turismo",
+									"type": "text"
+								},
+								{
+									"key": "departureLocality",
+									"value": "Obera",
+									"type": "text"
+								},
+								{
+									"key": "residenceLocality",
+									"value": "Candelaria",
+									"type": "text"
+								},
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/clientes/28",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"clientes",
+								"28"
+							]
+						},
+						"description": "Actualiza los datos de un cliente de un emprendimiento especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|htOpGYmQ3MbzyPZZTM9BjYFtcnf39SKYcJgQgvcS",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/clientes/13/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"clientes",
+								"13",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Elimina un cliente especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByDNI",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|MDWebHk84biqiUMPQfBO7khMprjSmKxNnBG9atbQ",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "dni",
+									"value": "63662273",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/clientes/buscar_dni",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"clientes",
+								"buscar_dni"
+							]
+						},
+						"description": "Retorna un cliente encontrado mediante dni en lugar de id."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cashflow",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|g2ma1iQXzpKzNC4VKwQwIS1R0VUJDkKLPHdOQz5r",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flujo_dinero/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flujo_dinero",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Retorna el listado del flujo de dinero de un emprendimiento especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|SLl3KGbTuzFGEWcTgcO7T0OTr6JEJOki1US2C4Ln",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flujo_dinero/2/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flujo_dinero",
+								"2",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Retorna los datos de un movimiento de dinero especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|SLl3KGbTuzFGEWcTgcO7T0OTr6JEJOki1US2C4Ln",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "detail",
+									"value": "Rotura varias",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "1200",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "Ingreso",
+									"type": "text"
+								},
+								{
+									"key": "booking_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flujo_dinero",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flujo_dinero"
+							]
+						},
+						"description": "Registra un movimiento de dinero."
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|g2ma1iQXzpKzNC4VKwQwIS1R0VUJDkKLPHdOQz5r",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "detail",
+									"value": "Pagos varios",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "Egreso",
+									"type": "text"
+								},
+								{
+									"key": "booking_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flujo_dinero/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flujo_dinero",
+								"5"
+							]
+						},
+						"description": "Actualiza los datos de un movimiento de dinero en un emprendimiento especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|eyR47nSVh0Urep17ZMjaej0axduWEYxDULkaeyZ3",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flujo_dinero/1/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flujo_dinero",
+								"1",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Elimina un registro de moviento de dinero especifico."
+					},
+					"response": []
+				},
+				{
+					"name": "Caja Diaria - daily",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|g2ma1iQXzpKzNC4VKwQwIS1R0VUJDkKLPHdOQz5r",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flujo_dinero_diario/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flujo_dinero_diario",
+								"emprendimiento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Caja Semanal - weekly",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|g2ma1iQXzpKzNC4VKwQwIS1R0VUJDkKLPHdOQz5r",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flujo_dinero_semanal/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flujo_dinero_semanal",
+								"emprendimiento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Caja Mensual - monthly",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|g2ma1iQXzpKzNC4VKwQwIS1R0VUJDkKLPHdOQz5r",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flujo_dinero_mensual/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flujo_dinero_mensual",
+								"emprendimiento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Caja Histórico - historic",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|RZZWX9iRSq9QsZnHbgyGtxlrPwN8ktYz1tIN1NVo",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flujo_dinero_historico/emprendimiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flujo_dinero_historico",
+								"emprendimiento",
+								"1"
+							]
+						},
+						"description": "Se retorna el flujo de caja historico del emprendimiento. No se retorna la sumatoria de Ingresos y Egresos."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Extra",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|aIz6KrPRaj2twa0TSs9true1CiBr5eFld9aMVLOM",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/detalle_extras/reserva/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"detalle_extras",
+								"reserva",
+								"1"
+							]
+						},
+						"description": "Retorna el listado de detalles extras de una reserva especifica."
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|aIz6KrPRaj2twa0TSs9true1CiBr5eFld9aMVLOM",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/detalle_extras/reserva/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"detalle_extras",
+								"reserva",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|aIz6KrPRaj2twa0TSs9true1CiBr5eFld9aMVLOM",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description",
+									"value": "otros",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "500",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/detalle_extras/reserva/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"detalle_extras",
+								"reserva",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|aIz6KrPRaj2twa0TSs9true1CiBr5eFld9aMVLOM",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "otros cambio",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1500",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/detalle_extras/4/reserva/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"detalle_extras",
+								"4",
+								"reserva",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|aIz6KrPRaj2twa0TSs9true1CiBr5eFld9aMVLOM",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "13",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "rotura televisor",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "3000",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/detalle_extras/4/reserva/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"detalle_extras",
+								"4",
+								"reserva",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Observation",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|T7yQqLNtcf1byhoMreQth2qWktutulLhMfgbd9JN",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/observaciones/reserva/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"observaciones",
+								"reserva",
+								"1"
+							]
+						},
+						"description": "Request:Se envia el id de la reserva.\n    booking_id: int\n    \nResponse: Retorna lista de observaciones de la reserva."
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|vEAjjDcAv5bzsUICMvNBaLs0eoBfKeXxAVDYXrjZ",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "moment",
+									"value": "checkout",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Espejo roto",
+									"type": "text"
+								},
+								{
+									"key": "booking_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/observaciones",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"observaciones"
+							]
+						},
+						"description": "Request: Se envia los datos de una nueva observacion.\n    moment: string, //select: checkin o checkout \n    description: string,\n    booking_id: int\n\nResponse: Retorna una nueva observacion.     \n"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|vEAjjDcAv5bzsUICMvNBaLs0eoBfKeXxAVDYXrjZ",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "moment",
+									"value": "checkin",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Alfombra manchada y rota",
+									"type": "text"
+								},
+								{
+									"key": "booking_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/observaciones/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"observaciones",
+								"4"
+							]
+						},
+						"description": "Request: Se envia un objeto Observacion o formulario con los datos a actualizar.\n    id: int,\n    moment: string,\n    description: string,\n    booking_id: int,\n    _method: PUT\n\nResponse: Retorna una observacion actualizada.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|T7yQqLNtcf1byhoMreQth2qWktutulLhMfgbd9JN",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/observaciones/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"observaciones",
+								"4"
+							]
+						},
+						"description": "Request: Se envia el id de la observacion a eliminar.\nResponse: Retorna la observacion borrada."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking Accommodation",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|ktAcTpTIiGpTjeihYbmtwjWoTkLT7Q0ndYrSbddK",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "dateFrom",
+									"value": "05-10-2021",
+									"type": "text"
+								},
+								{
+									"key": "dateTo",
+									"value": "13-10-2021",
+									"type": "text"
+								},
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas_alojamiento/lista",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas_alojamiento",
+								"lista"
+							]
+						},
+						"description": "Retorna el listado de reservas entre las fechas enviadas date_from, date_to y id del emprendimiento.\n\nRequest: \n        dateFrom: datetime\n        dateTo: datetime\n        entrepreneurship_id: int\n\nResponse: collection Bookings"
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|KV8CiP5QSgBHRUmtpiVj3gA3WJAwXKFmcAfWgLdD",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas_alojamiento/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas_alojamiento",
+								"1"
+							]
+						},
+						"description": "Retorna un reserva especifica junto con todos sus datos.\n\nRequest\n    id: int\n\nResponse\n    Booking + todos sus datos"
+					},
+					"response": []
+				},
+				{
+					"name": "booking detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|KV8CiP5QSgBHRUmtpiVj3gA3WJAwXKFmcAfWgLdD",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas_alojamiento/1/detalle",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas_alojamiento",
+								"1",
+								"detalle"
+							]
+						},
+						"description": "Retorna una reserva especifica junto con los datos de su detalle.\n\nRequest\n    id: int\n\nResponse\n    Booking + installations + optionalServices + extras    "
+					},
+					"response": []
+				},
+				{
+					"name": "Search booking by client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|KV8CiP5QSgBHRUmtpiVj3gA3WJAwXKFmcAfWgLdD",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "dni",
+									"value": "67627926",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas_alojamiento/busqueda_por_cliente",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas_alojamiento",
+								"busqueda_por_cliente"
+							]
+						},
+						"description": "Retorna la ultima reserva de un cliente mediante su dni.\n\nRequest\n    dni: string\n\nResponse\n    Booking + todos sus datos"
+					},
+					"response": []
+				},
+				{
+					"name": "Availability",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|LLZChKjaOjVKA6Q8PL0lg5AFBqf6anFK0cYoR7BG",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "adults",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "minors",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "dateFrom",
+									"value": "29-09-2021",
+									"type": "text"
+								},
+								{
+									"key": "dateTo",
+									"value": "01-10-2021",
+									"type": "text"
+								},
+								{
+									"key": "quantityInstallations",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "installation_id",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas_alojamiento/disponibilidad",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas_alojamiento",
+								"disponibilidad"
+							]
+						},
+						"description": "Retorna un verdadero o falso si existe disponibilidad de reserva de una instalacion entre las fechas enviadas.\n\nRequest\n    adults: int\n    minors: int\n    dateFrom: datetime\n    dateTo: datetime\n    quantityInstaillations: int\n    installation_id: int\n\nResponse\n    availability: bool    "
+					},
+					"response": []
+				},
+				{
+					"name": "storeBooking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|ZJh0xmWIDiPqMlgEEWt506tYTo2vKWGqj0Zy5ozC",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phoneContact",
+									"value": "3764111213",
+									"type": "text"
+								},
+								{
+									"key": "adults",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "minors",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "dateFrom",
+									"value": "10-11-2021",
+									"type": "text"
+								},
+								{
+									"key": "dateTo",
+									"value": "11-11-2021",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "installation_id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "quantityInstallations",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "optionalServices[0][id]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "optionalServices[0][quantity]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "optionalServices[1][id]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "optionalServices[1][quantity]",
+									"value": "1",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas_alojamiento",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas_alojamiento"
+							]
+						},
+						"description": "Retorna la reserva creada junto con el cliente responsable y los servicios opcionales, si es que se enviaron para agregarlo a la reserva.\n\nRequest\n    dateFrom: datetime\n    dateTo: datetime\n    client_id: int\n    installation_id: int\n    quantityInstallations: int\n    optionalServices: [{\n        id: int,\n        quantity: int\n    }]\n\nResponse\n    Booking + Client + Installations + OptionalServices(si es que se enviaron)."
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|9CK2Kehs5Q9HeiF21ztg3oUwrob4nnTBZ7sPNjlY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas_alojamiento/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas_alojamiento",
+								"8"
+							]
+						},
+						"description": "Retorna la reserva eliminada.\n\nRequest\n    id: int\n\nResponse\n    Booking"
+					},
+					"response": []
+				},
+				{
+					"name": "addOptionalServicesDetail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|bLj2lSVrjXwA1BakSkJqeVz63FIqgXNIXKWhcodT",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "booking_id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "optionalServices[0][id]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "optionalServices[0][quantity]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/agregar_servicio_opcional",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"agregar_servicio_opcional"
+							]
+						},
+						"description": "Retorna una reserva con sus servicios opcionales junto al nuevo servicio agregado.\n\nRequest\n    booking_id: int\n    optionalServices: [{\n        id: int,\n        quantity: int\n    }]\n\nResponse\n    Booking + OptionalServices"
+					},
+					"response": []
+				},
+				{
+					"name": "removerOptionalServicesDetail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|bLj2lSVrjXwA1BakSkJqeVz63FIqgXNIXKWhcodT",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "booking_id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "optionalservice_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/remover_servicio_opcional",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"remover_servicio_opcional"
+							]
+						},
+						"description": "Retorna una reserva con sus servicios opcionales actuales.\n\nRequest\n    booking_id: int\n    optionalservice_id: int\n\nResponse\n    Booking + OptionalServices"
+					},
+					"response": []
+				},
+				{
+					"name": "updateOptionalServicesQuantityDetail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|bLj2lSVrjXwA1BakSkJqeVz63FIqgXNIXKWhcodT",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "booking_id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "optionalservice_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/actualizar_servicio_opcional",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"actualizar_servicio_opcional"
+							]
+						},
+						"description": "Retorna una reserva con sus servicios opcionales actualizados.\n\nRequest\n    booking_id: int\n    optionalservice_id: int\n    quantity: int\n\nResponse\n    Booking + OptionalService"
+					},
+					"response": []
+				},
+				{
+					"name": "updateBooking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 3|ZJh0xmWIDiPqMlgEEWt506tYTo2vKWGqj0Zy5ozC"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phoneContact\": \"3764000111\",\n    \"adults\": 2,\n    \"minors\": 0,\n    \"dateFrom\": \"12-11-2021 00:00:00\",\n    \"dateTo\": \"13-11-2021 23:59:59\",\n    \"client_id\": 5,\n    \"guests\": [],\n    \"quantityInstallations\": 1,\n    \"_method\": \"PUT\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas_alojamiento/10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas_alojamiento",
+								"10"
+							]
+						},
+						"description": "Retorna la reserva actualizada.\n\nRequest\n    phoneContact: string\n    adults: int\n    minors: int\n    client_id: int\n    quests: array de ids de clientes\n\nResponse\n    Booking + Client + Guests "
+					},
+					"response": []
+				},
+				{
+					"name": "checkin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|oMq61qbTQp7lxwb9swrJDtcWdMx2d4VQRqpNRzNk",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"booking_id\": 9,\n    \"checkinDate\": \"10-10-2021 09:10:23\",\n    \"guests\": [\n        {\n            \"firstName\": \"Julieta\",\n            \"lastName\": \"Diaz\",\n            \"dni\": \"30111111\",\n            \"dateBirth\": \"20-08-1989\",\n            \"reason\": \"turismo\",\n            \"departureLocality\": \"Posadas\",\n            \"residenceLocality\": \"Posadas\",\n            \"entrepreneurship_id\": 1,\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas_alojamiento/checkin",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas_alojamiento",
+								"checkin"
+							]
+						},
+						"description": "Retorna la reserva actualizada con los datos del checkin.\n\nRequest\n    booking_id: int\n    checkinDate: datetime\n    guests: [{\n        firstName: string\n        lastName: string\n        dni: string\n        dateBirth: date\n        reason: string\n        departureLocality: string\n        residenceLocality: string\n    }]\n\nResponse\n    Booking + Client + Guests\n    "
+					},
+					"response": []
+				},
+				{
+					"name": "checkout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|oMq61qbTQp7lxwb9swrJDtcWdMx2d4VQRqpNRzNk",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"booking_id\": 9,\n    \"checkoutDate\": \"11-10-2021 10:05:00\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas_alojamiento/checkout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas_alojamiento",
+								"checkout"
+							]
+						},
+						"description": "Retorna la reserva actualizada con los datos del checkout.\n\nRequest\n    booking_id: int\n    checkoutDate: datetime\n\nResponse\n    Booking"
+					},
+					"response": []
+				},
+				{
+					"name": "bookingsWithoutCheckout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|RZZWX9iRSq9QsZnHbgyGtxlrPwN8ktYz1tIN1NVo",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas_alojamiento/sin_checkout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas_alojamiento",
+								"sin_checkout"
+							]
+						},
+						"description": "Retorna las reservas con alojamiento que no tengan checkout confirmado\n\nRequest:\n    entrepreneurship_id: int,\n\nResponse:\n    Booking collection"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Booking without Accommodation",
+			"item": [
+				{
+					"name": "getBookingsByDate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|xYPhkQDxFYq4RBX3sbG2pWYSCxjHUZnXPr9EcxQu",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "installation_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "entrepreneurship_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "01-11-2021",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/lista",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"lista"
+							]
+						},
+						"description": "Retornar la lista de reservas sin alojamiento relacionadas a la fecha enviada.\n\nRequest:\n    installation_id: int,\n    entrepreneurship_id: int,\n    date: datetime,\n\nResponse: Collection Booking without accommodation"
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|xYPhkQDxFYq4RBX3sbG2pWYSCxjHUZnXPr9EcxQu",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/7",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"7"
+							]
+						},
+						"description": "Retorna una reserva sin alojamiento junto con todos sus datos.\n\nRequest:\n    id: int\n\nResponse: Booking without accommodation."
+					},
+					"response": []
+				},
+				{
+					"name": "detailBooking",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|xYPhkQDxFYq4RBX3sbG2pWYSCxjHUZnXPr9EcxQu",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/7/detalle",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"7",
+								"detalle"
+							]
+						},
+						"description": "Retorna el detalle de una reserva sin alojamiento especifica.\n\nRequest:\n    id: int,\n\nResponse: Booking without accommodation."
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|gjatycR8wn2pur130bKYZSvGMJnSfU3o5dPZ503i",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phoneContact\": \"3764159357\",\n    \"adults\": 2,\n    \"minors\": 0,\n    \"dateFrom\": \"01-11-2021 10:00\",\n    \"dateTo\": \"01-11-2021 10:59\",\n    \"client\": \n        {\n            \"firstName\": \"Jorge\",\n            \"lastName\": \"Perez\",\n            \"dni\": \"30222222\",\n            \"dateBirth\": \"05-03-1989\",\n            \"reason\": \"turismo\",\n            \"departureLocality\": \"Posadas\",\n            \"residenceLocality\": \"Posadas\",\n            \"entrepreneurship_id\": 2\n        },\n    \"guests\": [\n        {\n            \"firstName\": \"Julieta\",\n            \"lastName\": \"Diaz\",\n            \"dni\": \"30111111\",\n            \"dateBirth\": \"20-08-1989\",\n            \"reason\": \"turismo\",\n            \"departureLocality\": \"Posadas\",\n            \"residenceLocality\": \"Posadas\",\n            \"entrepreneurship_id\": 2\n        }\n    ],\n    \"installation_id\": 7,\n    \"quantityInstallations\": 1,\n    \"optionalServices\": [\n       {\n           \"id\": 1,\n           \"quantity\": 1\n       },\n       {\n           \"id\": 3,\n           \"quantity\": 1\n       }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas"
+							]
+						},
+						"description": "Retorna la reserva sin alojamiento recien creada.\n\nRequest:\n    phoneContact: string,\n    adults: int,\n    minors: int,\n    dateFrom: datetime,\n    dateTo: datetime,\n    client: Client,\n    guests: array Clients,\n    installation_id: int,\n    quantityInstallation: int,\n    optionalServices: array OptionalService,\n\nResponse: Booking without accommodation"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|X9dAh2LMCj2IXy3c1TwaMiyRtTZki6JbZAhGltpZ",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phoneContact\": \"3764123458\",\n    \"adults\": 4,\n    \"minors\": 0,\n    \"dateFrom\": \"01-11-2021 13:00\",\n    \"dateTo\": \"01-11-2021 13:59\",\n    \"client_id\": 34,\n    \"guests\": [34,35,20,21],\n    \"quantityInstallations\": 1,\n    \"_method\": \"PUT\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/9/actualizar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"9",
+								"actualizar"
+							]
+						},
+						"description": "Retorna una reserva sin alojamiento con sus datos actualizados.\n\nRequest:\n    phoneContact: string,\n    adults: int,\n    minors: int,\n    dateFrom: datetime,\n    dateTo: datetime,\n    client_id: int,\n    guests: array client_id,\n    quantityInstallations: int,\n    _method: \"PUT\",\n\nResponse: Booking without Accommodation"
+					},
+					"response": []
+				},
+				{
+					"name": "checkout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|X9dAh2LMCj2IXy3c1TwaMiyRtTZki6JbZAhGltpZ",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "booking_id",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "checkoutDate",
+									"value": "01-11-2021 10:57:15",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/checkout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"checkout"
+							]
+						},
+						"description": "Retorna la reserva sin alojamiento con los campos checkout, monto actualizadas.\n\nRequest:\n    booking_id: int,\n    checkoutDate: datetime,\n\nResponse: Booking without Accommodation."
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|X9dAh2LMCj2IXy3c1TwaMiyRtTZki6JbZAhGltpZ",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"9"
+							]
+						},
+						"description": "Retorna los datos de la reserva sin alojamiento eliminada.\n\nRequest:\n    id: int\n\nResponse: Booking without accommodation."
+					},
+					"response": []
+				},
+				{
+					"name": "addOptionalServicesDetail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|bLj2lSVrjXwA1BakSkJqeVz63FIqgXNIXKWhcodT",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "booking_id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "optionalServices[0][id]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "optionalServices[0][quantity]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/agregar_servicio_opcional",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"agregar_servicio_opcional"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOptionalServicesQuantityDetail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|bLj2lSVrjXwA1BakSkJqeVz63FIqgXNIXKWhcodT",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "booking_id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "optionalservice_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/actualizar_servicio_opcional",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"actualizar_servicio_opcional"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removerOptionalServicesDetail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|bLj2lSVrjXwA1BakSkJqeVz63FIqgXNIXKWhcodT",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "booking_id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "optionalservice_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/remover_servicio_opcional",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"remover_servicio_opcional"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookingsWithoutCheckout - sin alojamiento",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|31dFsdp3d5UGgTFEmeLBlbRetMvPxdFpSODWxrxG",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "entrepreneurship_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservas/sin_checkout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservas",
+								"sin_checkout"
+							]
+						},
+						"description": "Retorna el lista de reservas sin alojamineto sin checkout confirmado.\n\nRequest:\n    entrepreneurship_id: int\n\nResponse:\n    Booking Collection"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
