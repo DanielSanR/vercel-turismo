@@ -43,7 +43,8 @@ class EntrepreneurshipController extends Controller
     public function show(Request $request)
     {
         $entrepreneurship = Entrepreneurship::findOrFail($request->id)->with('users','workdays','employees','localServices','optionalServices')->get();
-        return EntrepreneurshipResource::collection($entrepreneurship)->additional(['ok' => true]);
+        //return EntrepreneurshipResource::collection($entrepreneurship)->additional(['ok' => true]);
+        return new EntrepreneurshipResource(Entrepreneurship::with('users','workdays','employees','localServices','optionalServices')->findOrFail($request->id));
     }
 
 
