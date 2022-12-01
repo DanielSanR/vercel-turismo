@@ -21,7 +21,7 @@ class UserResource extends JsonResource
             'username' => $this->username,
             'email' => $this->email,
             'image_path' => $this->image_path,
-            'entrepreneurship' => new EntrepreneurshipResource($this->whenLoaded('entrepreneurship')),
+            'entrepreneurship' => new EntrepreneurshipResource($this->entrepreneurship),
         ];
     }
 
